@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
@@ -62,8 +60,7 @@ public class TestCases {
   
   @Test
   public void Test1() throws Exception{   
-	 try{ 
-	  
+
 	  
 	 driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP119");
 
@@ -166,18 +163,7 @@ public class TestCases {
 	 webElement("apliecinuEuro_Check").click();
 	 webElement("talak_Button").click();
 	 
-	 }
-	 catch (Exception e){
-			 
-		 StringWriter sw = new StringWriter();
-		 PrintWriter pw = new PrintWriter(sw);
-		 e.printStackTrace(pw);
-		 System.out.println(sw.toString()); 
-		 
-		 throw e;
-	 }
-     //Thread.sleep(10000);   
-     
+	     
   }
   
   //Izveido ekrānšāviņu neveiksmīga testa gadījumā

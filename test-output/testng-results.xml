@@ -2,38 +2,38 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="54710" started-at="2016-01-15T12:57:08Z" finished-at="2016-01-15T12:58:02Z">
+  <suite name="Default suite" duration-ms="46230" started-at="2016-01-18T15:21:50Z" finished-at="2016-01-18T15:22:37Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="54710" started-at="2016-01-15T12:57:08Z" finished-at="2016-01-15T12:58:02Z">
+    <test name="Default test" duration-ms="46230" started-at="2016-01-18T15:21:50Z" finished-at="2016-01-18T15:22:37Z">
       <class name="TestNG.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNG.TestCases@71c7db30]" name="setUp" is-config="true" duration-ms="9300" started-at="2016-01-15T14:57:08Z" finished-at="2016-01-15T14:57:17Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNG.TestCases@47d384ee]" name="setUp" is-config="true" duration-ms="10738" started-at="2016-01-18T17:21:50Z" finished-at="2016-01-18T17:22:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="Test1()[pri:0, instance:TestNG.TestCases@71c7db30]" name="Test1" duration-ms="44659" started-at="2016-01-15T14:57:17Z" finished-at="2016-01-15T14:58:02Z">
+        <test-method status="FAIL" signature="Test1()[pri:0, instance:TestNG.TestCases@47d384ee]" name="Test1" duration-ms="34359" started-at="2016-01-18T17:22:01Z" finished-at="2016-01-18T17:22:35Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":".//*[@id='mainForm']/div[2]/input"}
-Command duration or timeout: 30.15 seconds
+              <![CDATA[Unable to locate element: {"method":"id","selector":"userIdddd"}
+Command duration or timeout: 31.94 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f17504c9-5190-4b18-92c1-b9680cf9e343
-*** Element info: {Using=xpath, value=.//*[@id='mainForm']/div[2]/input}]]>
+Session ID: 36ee33e9-0be8-431c-8c57-0210b2a9bbcb
+*** Element info: {Using=id, value=userIdddd}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='mainForm']/div[2]/input"}
-Command duration or timeout: 30.15 seconds
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"userIdddd"}
+Command duration or timeout: 31.94 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f17504c9-5190-4b18-92c1-b9680cf9e343
-*** Element info: {Using=xpath, value=.//*[@id='mainForm']/div[2]/input}
+Session ID: 36ee33e9-0be8-431c-8c57-0210b2a9bbcb
+*** Element info: {Using=id, value=userIdddd}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -42,12 +42,12 @@ Session ID: f17504c9-5190-4b18-92c1-b9680cf9e343
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:403)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
 	at TestNG.ObjectMap.webElement(ObjectMap.java:36)
-	at TestNG.TestCases.webElement(TestCases.java:208)
-	at TestNG.TestCases.Test1(TestCases.java:73)
+	at TestNG.TestCases.webElement(TestCases.java:194)
+	at TestNG.TestCases.Test1(TestCases.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -69,37 +69,38 @@ Session ID: f17504c9-5190-4b18-92c1-b9680cf9e343
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
 	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.testng.TestNG.privateMain(TestNG.java:1325)
-	at org.testng.TestNG.main(TestNG.java:1294)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='mainForm']/div[2]/input"}
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"userIdddd"}
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/janisnu/AppData/Local/Temp/anonymous7103629871849417366webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/janisnu/AppData/Local/Temp/anonymous7103629871849417366webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/janisnu/AppData/Local/Temp/anonymous7783451066285732486webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/janisnu/AppData/Local/Temp/anonymous7783451066285732486webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test1 -->
-        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestCases@71c7db30]" name="takeScreenShotOnFailure" is-config="true" duration-ms="150" started-at="2016-01-15T14:58:02Z" finished-at="2016-01-15T14:58:02Z">
+        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestCases@47d384ee]" name="takeScreenShotOnFailure" is-config="true" duration-ms="129" started-at="2016-01-18T17:22:36Z" finished-at="2016-01-18T17:22:36Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test1 status=FAILURE method=TestCases.Test1()[pri:0, instance:TestNG.TestCases@71c7db30] output={null}]]]>
+                <![CDATA[[TestResult name=Test1 status=FAILURE method=TestCases.Test1()[pri:0, instance:TestNG.TestCases@47d384ee] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenShotOnFailure -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestNG.TestCases@71c7db30]" name="tearDown" is-config="true" duration-ms="586" started-at="2016-01-15T14:58:02Z" finished-at="2016-01-15T14:58:02Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestNG.TestCases@47d384ee]" name="tearDown" is-config="true" duration-ms="938" started-at="2016-01-18T17:22:36Z" finished-at="2016-01-18T17:22:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- TestNG.TestCases -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

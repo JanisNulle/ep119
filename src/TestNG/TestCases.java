@@ -154,11 +154,10 @@ public class TestCases {
 	 webElement("07_Radio").click();
 	 webElement("010_Radio").click();
 	 webElement("talak_Button").click();
-	 //driver.findElement(By.xpath("input[@value='Tālāk']")).click();
 	 driver.switchTo().alert().accept();//uzlecošs paziņojums
 	 webElement("talak_Button").click();
 	 
-	 //Pāreja uz EUR naudiņām
+	 //Pāreja uz EUR
 	 webElement("akcijuSkaits_Field").sendKeys("2");
 	 webElement("akcijasNominalvertiba_Field").sendKeys("2");
 	 webElement("pamatkapitalaLielums_Field").sendKeys("2");

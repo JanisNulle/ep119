@@ -158,7 +158,7 @@ public class TestCases {
 	 driver.switchTo().alert().accept();//uzlecošs paziņojums
 	 webElement("talak_Button").click();
 	 
-	 //Pāreja uz EUR
+	 //Pāreja uz EUR naudiņām
 	 webElement("akcijuSkaits_Field").sendKeys("2");
 	 webElement("akcijasNominalvertiba_Field").sendKeys("2");
 	 webElement("pamatkapitalaLielums_Field").sendKeys("2");

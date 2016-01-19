@@ -132,13 +132,8 @@ Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &a
 System info: host: &apos;NB32057&apos;, ip: &apos;172.21.1.223&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_66&apos;
 Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
-	at TestNG.ObjectMap.webElement(ObjectMap.java:36)
-	at TestNG.TestCases.webElement(TestCases.java:194)
-	at TestNG.TestCases.Test1(TestCases.java:67)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:311)
+	at TestNG.TestCases.Test1(TestCases.java:65)
 Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
 	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
@@ -156,7 +151,7 @@ Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7
 	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
 	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
-	... 30 more
+	... 25 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
@@ -168,7 +163,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.Socket.connect(Unknown Source)
 	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 45 more
+	... 40 more
 ... Removed 23 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -231,12 +226,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Test1')
 data.setCell(0, 2, 'TestNG.TestCases')
-data.setCell(0, 3, 4706);
+data.setCell(0, 3, 3322);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -271,19 +266,19 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Test1</span>
-                <span class="method-start">9359 ms</span>
+                <span class="method-start">8406 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">takeScreenShotOnFailure([TestResult name=Test1 status=FAILURE method=TestCases.Test1()[pri:0, instance:TestNG.TestCases@71c7...)</span>
-                <span class="method-start">14065 ms</span>
+                <span class="method-start">11728 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15112 ms</span>
+                <span class="method-start">12753 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

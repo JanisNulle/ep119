@@ -1,0 +1,15 @@
+Element is no longer attached to the DOM
+Command duration or timeout: 884 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
+System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b4353e81-75b5-461a-af50-6648789b01b0
+*** Element info: {Using=xpath, value=.//option[normalize-space(.) = "1"]}
+
+===============================================
+Suite
+Total tests run: 1, Failures: 1, Skips: 0
+===============================================
+

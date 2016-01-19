@@ -2,26 +2,26 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="17282" started-at="2016-01-19T13:29:27Z" finished-at="2016-01-19T13:29:45Z">
+  <suite name="Suite" duration-ms="16564" started-at="2016-01-19T13:58:56Z" finished-at="2016-01-19T13:59:13Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="17282" started-at="2016-01-19T13:29:27Z" finished-at="2016-01-19T13:29:45Z">
+    <test name="Test" duration-ms="16564" started-at="2016-01-19T13:58:56Z" finished-at="2016-01-19T13:59:13Z">
       <class name="TestNG.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNG.TestCases@47d384ee]" name="setUp" is-config="true" duration-ms="9490" started-at="2016-01-19T15:29:27Z" finished-at="2016-01-19T15:29:37Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestNG.TestCases@71c7db30]" name="setUp" is-config="true" duration-ms="9355" started-at="2016-01-19T15:58:56Z" finished-at="2016-01-19T15:59:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="Test1()[pri:0, instance:TestNG.TestCases@47d384ee]" name="Test1" duration-ms="5310" started-at="2016-01-19T15:29:37Z" finished-at="2016-01-19T15:29:42Z">
+        <test-method status="FAIL" signature="Test1()[pri:0, instance:TestNG.TestCases@71c7db30]" name="Test1" duration-ms="4706" started-at="2016-01-19T15:59:06Z" finished-at="2016-01-19T15:59:10Z">
           <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
               <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
@@ -53,9 +53,8 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
 	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+	at org.testng.TestNG.privateMain(TestNG.java:1325)
+	at org.testng.TestNG.main(TestNG.java:1294)
 Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
 	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
@@ -73,7 +72,7 @@ Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7
 	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
 	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
-	... 31 more
+	... 30 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
@@ -85,31 +84,31 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.Socket.connect(Unknown Source)
 	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 46 more
+	... 45 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test1 -->
-        <test-method status="FAIL" signature="takeScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestCases@47d384ee]" name="takeScreenShotOnFailure" is-config="true" duration-ms="0" started-at="2016-01-19T15:29:42Z" finished-at="2016-01-19T15:29:42Z">
+        <test-method status="FAIL" signature="takeScreenShotOnFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestCases@71c7db30]" name="takeScreenShotOnFailure" is-config="true" duration-ms="0" started-at="2016-01-19T15:59:10Z" finished-at="2016-01-19T15:59:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test1 status=FAILURE method=TestCases.Test1()[pri:0, instance:TestNG.TestCases@47d384ee] output={null}]]]>
+                <![CDATA[[TestResult name=Test1 status=FAILURE method=TestCases.Test1()[pri:0, instance:TestNG.TestCases@71c7db30] output={null}]]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
               <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: FirefoxDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: FirefoxDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
@@ -139,9 +138,8 @@ Driver info: driver.version: FirefoxDriver
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
 	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+	at org.testng.TestNG.privateMain(TestNG.java:1325)
+	at org.testng.TestNG.main(TestNG.java:1294)
 Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
 	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
@@ -159,7 +157,7 @@ Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7
 	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
 	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
-	... 29 more
+	... 28 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
@@ -171,24 +169,24 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.Socket.connect(Unknown Source)
 	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 44 more
+	... 43 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenShotOnFailure -->
-        <test-method status="FAIL" signature="tearDown()[pri:0, instance:TestNG.TestCases@47d384ee]" name="tearDown" is-config="true" duration-ms="0" started-at="2016-01-19T15:29:43Z" finished-at="2016-01-19T15:29:43Z">
+        <test-method status="FAIL" signature="tearDown()[pri:0, instance:TestNG.TestCases@71c7db30]" name="tearDown" is-config="true" duration-ms="0" started-at="2016-01-19T15:59:11Z" finished-at="2016-01-19T15:59:11Z">
           <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
               <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'NB32057', ip: '172.21.1.223', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_66'
 Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
@@ -216,9 +214,8 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
 	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+	at org.testng.TestNG.privateMain(TestNG.java:1325)
+	at org.testng.TestNG.main(TestNG.java:1294)
 Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
 	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
@@ -236,7 +233,7 @@ Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7
 	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
 	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
-	... 27 more
+	... 26 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
@@ -248,7 +245,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.Socket.connect(Unknown Source)
 	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 42 more
+	... 41 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->

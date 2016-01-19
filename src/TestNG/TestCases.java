@@ -31,8 +31,6 @@ public class TestCases {
   //Pirms testu inicializācija
   @BeforeClass
   public void setUp() throws Exception {
-	  
-	  //bup
 
 	  LocalDateTime now = LocalDateTime.now();	  
 	  

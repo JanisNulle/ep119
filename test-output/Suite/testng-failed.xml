@@ -7,7 +7,6 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="takeScreenShotOnFailure"/>
           <include name="Test1"/>
         </methods>
       </class> <!-- TestNG.TestCases -->

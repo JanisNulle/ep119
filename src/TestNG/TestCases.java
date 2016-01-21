@@ -48,7 +48,7 @@ public class TestCases {
 	  //Dabūn current working directory priekš objectmap.properties faila
 	  String workingDir=System.getProperty("user.dir");
 	  //Norāda objectmap.properties faila vietu
-	  objMap = new ObjectMap (workingDir+"\\ObjectMapProperties\\objectmap.properties",driver);
+	  objMap = new ObjectMap (workingDir+"\\ObjectMapProperties\\objectmap.properties");
 	   
 	  //Timeout uzstādījumi
 	  driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
@@ -189,7 +189,7 @@ public class TestCases {
   
   //Metode koda saīsināšanai
   WebElement webElement(String name) throws Exception{	    
-	  return objMap.webElement(name);
+	  return driver.findElement(objMap.getLocator(name));
   }
 
 

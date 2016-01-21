@@ -6,21 +6,17 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 //Šī klase ļauj izsaukt elementus, kas doti failā objectmap.properties
 
 public class ObjectMap {
 	  
 	  Properties properties;
-	  WebDriver driver;
 	  
 	  
-	  public ObjectMap(String mapFile, WebDriver usedDriver)
+	  public ObjectMap(String mapFile)
 	  {
 	      properties = new Properties();
-	      driver = usedDriver;
 	      
 	      try 
 	      {
@@ -31,10 +27,7 @@ public class ObjectMap {
 	          System.out.println(e.getMessage());
 	     }
 	   }
-	  
-	  public WebElement webElement(String ElementName) throws Exception{
-		  return driver.findElement(getLocator(ElementName));
-	  };
+
 
 
 	   public By getLocator(String ElementName) throws Exception {

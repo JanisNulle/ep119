@@ -54,7 +54,6 @@ public class TestCases {
 	  
 	  driver = new FirefoxDriver();//Palaiž pārlūku
 	  driver.manage().window().maximize();//Maksimizē logu
-	  //driver.get("https://lvptest.vraa.gov.lv");//Atver doto adresi	  
 	  
 	  //Dabūn current working directory priekš objectmap.properties faila
 	  String workingDir=System.getProperty("user.dir");
@@ -69,7 +68,6 @@ public class TestCases {
   
   @Test
   public void Test1() throws Exception{   
-
 	  
 	 driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP119");
 

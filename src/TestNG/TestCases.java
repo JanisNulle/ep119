@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 //import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
@@ -42,15 +40,14 @@ public class TestCases {
 
 	  
 	  folderPath = "test-output\\Log";
-	  new File(folderPath).mkdirs();	  
+	  new File(folderPath).mkdirs();	 
+	  FileUtils.cleanDirectory(new File(folderPath));
+	  
 	  PrintStream out = new PrintStream(new FileOutputStream(folderPath + "\\output.log"));
 	  System.setOut(out);
- 
-	  try{
-		  Files.delete(Paths.get(folderPath + "\\testScreenShot.jpg"));
-	  } catch (Exception e){
-		  System.out.println("testScreenShot.jpg not deleted!");
-	  }
+
+	  
+
 	  
 	  driver = new FirefoxDriver();//Palaiž pārlūku
 	  driver.manage().window().maximize();//Maksimizē logu
@@ -180,7 +177,7 @@ public class TestCases {
   public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
 	  if (testResult.getStatus() == ITestResult.FAILURE) {
 	  	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	  	FileUtils.copyFile(scrFile, new File(folderPath+"\\testScreenShot.jpg"));
+	  	FileUtils.copyFile(scrFile, new File(folderPath+"\\"+ testResult.getName() +".jpg"));
 	  	
 	  	System.out.println(testResult.getThrowable().getMessage());
 	  } 

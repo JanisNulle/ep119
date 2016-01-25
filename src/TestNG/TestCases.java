@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 //import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
@@ -37,11 +39,19 @@ public class TestCases {
 	  //Mape kurā atrodas logi un ekrānšāviņi:
 	  //folderPath = "test-output\\Log\\"+now.getYear()+"-"+now.getMonth()+"-"+now.getDayOfMonth()
 	  //+" "+now.getHour()+"-"+now.getMinute()+"-"+now.getSecond();
+
+	  
 	  folderPath = "test-output\\Log";
 	  new File(folderPath).mkdirs();	  
 	  PrintStream out = new PrintStream(new FileOutputStream(folderPath + "\\output.log"));
 	  System.setOut(out);
  
+	  try{
+		  Files.delete(Paths.get(folderPath + "\\testScreenShot.jpg"));
+	  } catch (Exception e){
+		  System.out.println("testScreenShot.jpg not deleted!");
+	  }
+	  
 	  driver = new FirefoxDriver();//Palaiž pārlūku
 	  driver.manage().window().maximize();//Maksimizē logu
 	  //driver.get("https://lvptest.vraa.gov.lv");//Atver doto adresi	  

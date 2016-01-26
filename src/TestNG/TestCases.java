@@ -10,6 +10,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 //import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
@@ -45,7 +49,6 @@ public class TestCases {
 	  
 	  PrintStream out = new PrintStream(new FileOutputStream(folderPath + "\\output.log"));
 	  System.setOut(out);
-
 	  
 
 	  
@@ -65,6 +68,9 @@ public class TestCases {
   
   @Test
   public void Test1() throws Exception{   
+	 String workingDir=System.getProperty("user.dir");
+	 System.out.println(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
+ 
 	  
 	 driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP119");
 
@@ -74,7 +80,7 @@ public class TestCases {
 	 webElement("banka4").sendKeys("1");
 	 Thread.sleep(10000);
 	 webElement("banka3").click();	 	
-
+	 
 	 
 	 driver.switchTo().frame(0);//aplikācija ir iekš iframe
 	 driver.switchTo().frame(0);//iekš vēlviena iframe
@@ -197,9 +203,16 @@ public class TestCases {
   }
   
   //Metode koda saīsināšanai
-  WebElement webElement(String name) throws Exception{	    
+  WebElement webElement(String name) throws Exception{	  
+	  //System.out.println("Meklē elementu "+ name);
 	  return driver.findElement(objMap.getLocator(name));
   }
-
+  
+  //Metode, kas visu faila saturu ievieto String
+  static String readFile(String path, Charset encoding) throws IOException 
+  {
+	  byte[] encoded = Files.readAllBytes(Paths.get(path));	  
+	  return new String(encoded, encoding);
+  }
 
 }

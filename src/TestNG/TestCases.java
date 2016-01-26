@@ -71,6 +71,7 @@ public class TestCases {
 	 webElement("banka1").click();
 	 webElement("banka2").sendKeys("1399372");
 	 webElement("banka4").click();
+	 webElement("banka4").sendKeys("1");
 	 Thread.sleep(10000);
 	 webElement("banka3").click();	 	
 

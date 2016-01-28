@@ -107,7 +107,7 @@ public class TestCases {
 	 //Atķeksē kastītes
 	 webElement("0_Check").click();
 	 webElement("7_Check").click();
-	 webElement("9_Check").click();
+	 //webElement("9_Check").click();
 	 webElement("10_Check").click();
 	 
 	 webElement("talak_Button").click();
@@ -172,14 +172,26 @@ public class TestCases {
 	 webElement("talak_Button").click();
 	 
 	 //Pāreja uz EUR
-	 webElement("akcijuSkaits_Field").sendKeys("2");
+	 /*webElement("akcijuSkaits_Field").sendKeys("2");
 	 webElement("akcijasNominalvertiba_Field").sendKeys("2");
 	 webElement("pamatkapitalaLielums_Field").sendKeys("2");
 	 webElement("apmaksataisPamatkapitals_Field").sendKeys("2");
 	 
 	 webElement("apliecinuEuro_Check").click();
+	 webElement("talak_Button").click();*/
+	 
+	 //Datuma ievade
+	 webElement("datums_Field").sendKeys("31.12.2025.");
+	 webElement("talak_Button").click();
+	 driver.switchTo().alert().accept();//uzlecošs paziņojums
 	 webElement("talak_Button").click();
 	 
+	 webElement("apliecinu_Check").click();
+	 webElement("talak_Button").click();
+	 
+	 //Failu augšuplāde
+	 webElement("augsupladet_Button1").click();
+	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
 	     
   }
   

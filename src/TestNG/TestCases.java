@@ -75,7 +75,7 @@ public class TestCases {
 	 webElement("banka1").click();
 	 webElement("banka2").sendKeys("sia_dpa_gzalezalitis_test");
 	 webElement("banka3").sendKeys(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
-	 webElement("banka4").click();	 	
+	 //webElement("banka4").click();	 	
 	 Select select = new Select(webElement("banka5"));
 	 select.selectByIndex(1);
 	 

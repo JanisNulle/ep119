@@ -85,6 +85,7 @@ public class TestCases {
 	 Select select = new Select(webElement("banka5"));
 	 select.selectByIndex(1);
 	 
+	 Thread.sleep(10000);
 	 
 	 driver.switchTo().frame(0);//ep 119 web aplikācija ir iekš iframe
 	 driver.switchTo().frame(0);//iekš vēlviena iframe
@@ -189,15 +190,25 @@ public class TestCases {
 	 webElement("apliecinu_Check").click();
 	 webElement("talak_Button").click();
 	 
+	 
 	 //Failu augšuplāde
 
-	 webElement("augsupladet_Button1").click();
-	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
-	 webElement("augsupladet_Button2").click();
-	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
-	 webElement("augsupladet_Button3").click();
-	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
-	     
+	 webElement("augsupladet_Button1").sendKeys(workingDir + "\\document.edoc");
+	 webElement("augsupladet_Button2").sendKeys(workingDir + "\\document.edoc");
+	 webElement("augsupladet_Button3").sendKeys(workingDir + "\\document.edoc");
+	 Thread.sleep(10000);
+	 webElement("talak_Button").click();
+	 
+	 webElement("vards_Field2").sendKeys("Tests");
+	 webElement("uzvards_Field2").sendKeys("Tests");
+	 webElement("personasKods_Field2").sendKeys("111111-11111");
+	 webElement("parakstisanasVieta_Field2").sendKeys("Tests");
+	 webElement("ePastaAdrese_Field2").sendKeys("vards@epasts.lv");
+	 webElement("talak_Button").click();
+	 webElement("talak_Button").click();
+	 
+	 
+	 
   }
   
   //Izveido ekrānšāviņu neveiksmīga testa gadījumā

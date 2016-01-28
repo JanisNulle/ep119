@@ -75,7 +75,13 @@ public class TestCases {
 	 webElement("banka1").click();
 	 webElement("banka2").sendKeys("sia_dpa_gzalezalitis_test");
 	 webElement("banka3").sendKeys(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
-	 //webElement("banka4").click();	 	
+	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	 try{
+		 webElement("banka4").click();	 	
+	 }
+	 catch (Exception e){		 
+	 }	 
+	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 Select select = new Select(webElement("banka5"));
 	 select.selectByIndex(1);
 	 

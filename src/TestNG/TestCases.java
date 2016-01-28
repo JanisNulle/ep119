@@ -190,16 +190,13 @@ public class TestCases {
 	 webElement("talak_Button").click();
 	 
 	 //Failu augšuplāde
-	 webElement("augsupladet_Button1").sendKeys(workingDir + "\\document.edoc");
-	 webElement("augsupladet_Button2").sendKeys(workingDir + "\\document.edoc");
-	 webElement("augsupladet_Button3").sendKeys(workingDir + "\\document.edoc");
-	 webElement("talak_Button").click();
-	 /*webElement("augsupladet_Button1").click();
+
+	 webElement("augsupladet_Button1").click();
 	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
 	 webElement("augsupladet_Button2").click();
 	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
 	 webElement("augsupladet_Button3").click();
-	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");*/
+	 webElement("augsupladet_Dialogue").sendKeys(workingDir + "\\document.edoc");
 	     
   }
   

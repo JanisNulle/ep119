@@ -14,6 +14,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 //import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
@@ -206,6 +207,10 @@ public class TestCases {
 	 webElement("ePastaAdrese_Field2").sendKeys("vards@epasts.lv");
 	 webElement("talak_Button").click();
 	 webElement("talak_Button").click();
+	 
+	 //Šādi tiek pārbaudīts, vai lapā ir teksts "Jums nav tiesību parakstīt pieteikumu!"
+	 List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'Jums nav tiesību parakstīt pieteikumu!')]"));
+	 Assert.assertTrue(list.size() > 0);
 	 
 	 
 	 

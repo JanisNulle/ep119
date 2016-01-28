@@ -68,21 +68,19 @@ public class TestCases {
   
   @Test
   public void Test1() throws Exception{   
-	 String workingDir=System.getProperty("user.dir");
-	 System.out.println(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
- 
+	 String workingDir=System.getProperty("user.dir"); 
 	  
 	 driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP119");
 
 	 webElement("banka1").click();
-	 webElement("banka2").sendKeys("1399372");
-	 webElement("banka4").click();
-	 webElement("banka4").sendKeys("1");
-	 Thread.sleep(10000);
-	 webElement("banka3").click();	 	
+	 webElement("banka2").sendKeys("sia_dpa_gzalezalitis_test");
+	 webElement("banka3").sendKeys(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
+	 webElement("banka4").click();	 	
+	 Select select = new Select(webElement("banka5"));
+	 select.selectByIndex(1);
 	 
 	 
-	 driver.switchTo().frame(0);//aplikācija ir iekš iframe
+	 driver.switchTo().frame(0);//ep 119 web aplikācija ir iekš iframe
 	 driver.switchTo().frame(0);//iekš vēlviena iframe
 	 
 	 webElement("piekritu_CheckBox").click();
@@ -136,7 +134,7 @@ public class TestCases {
 	 webElement("talak_Button").click();
 	 
 	 //Jauna juridiskā adrese
-	 Select select = new Select(webElement("novads_DropDown"));
+	 select = new Select(webElement("novads_DropDown"));
 	 select.selectByVisibleText("Ādažu nov.");
 	 select = new Select(webElement("ciems_DropDown"));
 	 select.selectByVisibleText("Ādaži");

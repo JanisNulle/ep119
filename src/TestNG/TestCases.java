@@ -32,6 +32,9 @@ public class TestCases {
   private StringBuffer verificationErrors = new StringBuffer();
   public ObjectMap objMap;
   String folderPath;  
+  String workingDir = System.getProperty("user.dir"); 
+  Select select;
+  JavascriptExecutor js;
 
   //Pirms testu inicializācija
   @BeforeClass
@@ -57,35 +60,108 @@ public class TestCases {
 	  driver.manage().window().maximize();//Maksimizē logu
 	  
 	  //Dabūn current working directory priekš objectmap.properties faila
-	  String workingDir=System.getProperty("user.dir");
 	  //Norāda objectmap.properties faila vietu
 	  objMap = new ObjectMap (workingDir+"\\ObjectMapProperties\\objectmap.properties");
 	   
 	  //Timeout uzstādījumi
 	  driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  
+	  //javascript executor
+	  js = (JavascriptExecutor) driver;
+	  
+
+  }
+  
+  @Test
+  public void EP219Piemers() throws Exception{
+	  driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP219?");	  	
+	  LogIn();
+	  //Thread.sleep(10000);
+	  
+	  driver.switchTo().frame(0);//ep 119 web aplikācija ir iekš iframe
+	  driver.switchTo().frame(0);//iekš vēlviena iframe
+		
+
+	  //E-pakalpojumā 219 visi checkboxi .css failā atzīmēti ar izmēru 100x100.
+	  //Šī iemesla dēļ selenium nevar uz tiem uzklikšķināt
+	  //Jāizmanto javascritp executor klase, kas aktivizē checkboksus "pa taisno"
+	  js.executeScript("arguments[0].click();", webElement("ep219Piekritu_Check"));
+	  
+	  //webElement("ep219Piekritu_Check");
+	  
+	  webElement("talak_Button").click();
+	  webElement("jaunsPakalpojums_Button").click();
+	  webElement("ePasts_Field2").sendKeys(readFile(workingDir + "\\email", StandardCharsets.UTF_8));
+	  select = new Select(webElement("pieteikumaVeids_Combo"));
+	  select.selectByVisibleText("Izmaiņu reģistrācija");
+	  webElement("registracijasNumurs_Field").sendKeys("40103291885");
+	  webElement("subjectCheck_Button").click();
+	  
+	  js.executeScript("arguments[0].click();", webElement("row0_Check"));
+	  js.executeScript("arguments[0].click();", webElement("row7_Check"));
+	  js.executeScript("arguments[0].click();", webElement("row9_Check"));
+	  js.executeScript("arguments[0].click();", webElement("row12_Check"));
+	  js.executeScript("arguments[0].click();", webElement("row13_Check"));
+	  
+	  webElement("close_Button").click();
+	  webElement("jaunaisNosaukums_Field").sendKeys("Tests");
+	  select = new Select(webElement("prokuras_Combo"));
+	  select.selectByIndex(1);
+	  
+	  js.executeScript("arguments[0].click();", webElement("row17_Check"));
+	  
+	  webElement("talak_Button").click();
+	  
+	  //Failu augšuplāde - tā vietā, lai atvērtu augšupielādes logu, iespējams vienkārši padot faila 
+	  //atrašanās vietu pa taisno input elementam string formātā
+	  webElement("row0_FileUpload").sendKeys(workingDir + "\\document.edoc");
+	  webElement("row1_FileUpload").sendKeys(workingDir + "\\document.edoc");
+	  webElement("row2_FileUpload").sendKeys(workingDir + "\\document.edoc");
+	  webElement("row3_FileUpload").sendKeys(workingDir + "\\document.edoc");
+	  webElement("row4_FileUpload").sendKeys(workingDir + "\\document.edoc");
+	  webElement("row6_FileUpload").sendKeys(workingDir + "\\document.edoc");
+	  webElement("row10_FileUpload").sendKeys(workingDir + "\\document.edoc");
+		 
+	  webElement("talak_Button").click();
+	  
+	  //Veic salīdzināšanu vai summa sakrīt ar 
+	  
+	  
+	  
+	  //
+	  webElement("pievienotMaksajumaDatus_Button0").click();
+	  webElement("vardsUzvards_Field").sendKeys("Tests Tests");
+	  webElement("personasKodsVaiDzimsanasDatums_Field").sendKeys("111111-11111");
+	  webElement("maksajumaDatums_Field").sendKeys("01.01.2016");
+	  webElement("dokumentaNr_Field").sendKeys("1");
+	  select = new Select(webElement("maksajumuPakalpojumuSniedzejs_Combo"));
+	  select.selectByIndex(1);
+	  webElement("saglabat_Button").click();
+	  
+	  webElement("pievienotMaksajumaDatus_Button1").click();
+	  webElement("vardsUzvards_Field").sendKeys("Tests Tests");
+	  webElement("personasKodsVaiDzimsanasDatums_Field").sendKeys("111111-11111");
+	  webElement("maksajumaDatums_Field").sendKeys("01.01.2016");
+	  webElement("dokumentaNr_Field").sendKeys("1");
+	  select = new Select(webElement("maksajumuPakalpojumuSniedzejs_Combo"));
+	  select.selectByIndex(1);
+	  webElement("saglabat_Button").click();
+	  
+	  webElement("iesniegtUR_Button").click();
+	  webElement("labi_Button").click();	  
+	  
+	  Thread.sleep(10000);
+	  
   }
   
   
-  @Test
-  public void Test1() throws Exception{   
-	 String workingDir=System.getProperty("user.dir"); 
-	  
-	 driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP119");
+  public void EP119Piemers() throws Exception{   
 
-	 webElement("banka1").click();
-	 webElement("banka2").sendKeys("sia_dpa_gzalezalitis_test");
-	 webElement("banka3").sendKeys(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
-	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	 try{
-		 webElement("banka4").click();	 	
-	 }
-	 catch (Exception e){		 
-	 }	 
-	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	 Select select = new Select(webElement("banka5"));
-	 select.selectByIndex(1);
-	 
+	 driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP119?");	  	
+	 LogIn();
+  		  
+	 //Sagaida lietošanas nosacījumus 
 	 Thread.sleep(10000);
 	 
 	 driver.switchTo().frame(0);//ep 119 web aplikācija ir iekš iframe
@@ -192,8 +268,8 @@ public class TestCases {
 	 webElement("talak_Button").click();
 	 
 	 
-	 //Failu augšuplāde
-
+	 //Failu augšuplāde - ta vietā, lai atvērtu augšupielādes logu, iespējams vienkārši padot faila 
+	 //atrašanās vietu pa taisno input elementam string formātā
 	 webElement("augsupladet_Button1").sendKeys(workingDir + "\\document.edoc");
 	 webElement("augsupladet_Button2").sendKeys(workingDir + "\\document.edoc");
 	 webElement("augsupladet_Button3").sendKeys(workingDir + "\\document.edoc");
@@ -211,9 +287,25 @@ public class TestCases {
 	 //Šādi tiek pārbaudīts, vai lapā ir teksts "Jums nav tiesību parakstīt pieteikumu!"
 	 List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'Jums nav tiesību parakstīt pieteikumu!')]"));
 	 Assert.assertTrue(list.size() > 0);
+	 Thread.sleep(10000);
 	 
 	 
-	 
+  }
+  
+  //Metode kas ielogojas 
+  private void LogIn() throws Exception{
+	  webElement("banka1").click();
+	  webElement("banka2").sendKeys("sia_dpa_gzalezalitis_test");
+	  webElement("banka3").sendKeys(readFile(workingDir + "\\user.pass", StandardCharsets.UTF_8));
+	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	  try{
+		  webElement("banka4").click();	 	
+	  }
+	  catch (Exception e){		 
+	  }	 
+	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  select = new Select(webElement("banka5"));
+	  select.selectByVisibleText("sia_dpa_gzalezalitis_test Gatis Zāle-Zālītis (31078410838)");
   }
   
   //Izveido ekrānšāviņu neveiksmīga testa gadījumā
@@ -251,5 +343,6 @@ public class TestCases {
 	  byte[] encoded = Files.readAllBytes(Paths.get(path));	  
 	  return new String(encoded, encoding);
   }
-
+  
+  
 }

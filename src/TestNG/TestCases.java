@@ -51,7 +51,7 @@ public class TestCases {
 	  new File(folderPath).mkdirs();	 
 	  FileUtils.cleanDirectory(new File(folderPath));
 	  
-	  PrintStream out = new PrintStream(new FileOutputStream(folderPath + "\\output.log"));
+	  PrintStream out = new PrintStream(new FileOutputStream(folderPath + "\\output.log"), true, "UTF-8");
 	  System.setOut(out);
 	  
 

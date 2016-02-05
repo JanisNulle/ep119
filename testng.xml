@@ -4,6 +4,17 @@
   <test name="Test">
     <classes>
       <class name="TestNG.TestCases"/>
+      	<methods>      	
+      		<!-- 
+      		Include izmanto, lai norādītu konkrētus izpildāmus testus:
+      		<include name="EP219Piemers" />      		
+      		Exclude ļauj izlaist testus: 
+      		<exclude name="EP219Piemers" />
+      		Ja nekas nav norādīts - tiks izpildīti visi testi.
+      		-->
+      		
+      		
+      	</methods>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

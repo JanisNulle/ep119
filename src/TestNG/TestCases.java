@@ -7,17 +7,14 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Properties;
 //import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
@@ -38,8 +35,6 @@ public class TestCases {
   String workingDir = System.getProperty("user.dir"); 
   Select select;
   JavascriptExecutor js;
-  Properties priceProperties;
-
   //Pirms testu inicializācija
   @BeforeClass
   public void setUp() throws Exception {
@@ -62,18 +57,13 @@ public class TestCases {
 	  //Dabūn current working directory priekš objectmap.properties faila
 	  //Norāda objectmap.properties faila vietu
 	  objMap = new ObjectMap (workingDir+"\\UserFiles\\objectmap.properties");
-	  
-	  //Ielādē failu ar gaidāmajām nodevu summām
-	  InputStreamReader master = new InputStreamReader(new FileInputStream(workingDir+"\\UserFiles\\expectedPrice.properties"), StandardCharsets.UTF_8);
-	  priceProperties = new Properties();
-	  priceProperties.load(master);
-	  master.close();
+
 	   
 	  //Timeout uzstādījumi
 	  driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  
-	  //javascript executor
+	  //JavascripExecutor instance
 	  js = (JavascriptExecutor) driver;
 	  
 
@@ -85,16 +75,15 @@ public class TestCases {
 	  LogIn();
 	  //Thread.sleep(10000);
 	  
-	  driver.switchTo().frame(0);//ep 119 web aplikācija ir iekš iframe
+	  driver.switchTo().frame(0);//EP219 web aplikācija ir iekš iframe
 	  driver.switchTo().frame(0);//iekš vēlviena iframe
 		
 
-	  //E-pakalpojumā 219 visi checkboxi .css failā atzīmēti ar izmēru 100x100.
-	  //Šī iemesla dēļ selenium nevar uz tiem uzklikšķināt
-	  //Jāizmanto javascritp executor klase, kas aktivizē checkboksus "pa taisno"
+	  //E-pakalpojumā 219 visi checkboxi .css failā atzīmēti ar izmēru 100x100,
+	  //taču pārlūkā attēlojas parastā izmērā.
+	  //Šī iemesla dēļ Selenium nevar uz tiem uzklikšķināt.
+	  //Jāizmanto JavascriptExecutor klase, kas aktivizē checkboksus "pa taisno".
 	  js.executeScript("arguments[0].click();", webElement("ep219Piekritu_Check"));
-	  
-	  //webElement("ep219Piekritu_Check");
 	  
 	  webElement("talak_Button").click();
 	  webElement("jaunsPakalpojums_Button").click();
@@ -133,7 +122,7 @@ public class TestCases {
 	  
 	  
 	  //Veic salīdzināšanu vai summa sakrīt ar gaidāmo
-	  salidzinatMaksu("ep219piemers_nodeva","ep219piemers_publikacija");
+	  salidzinatMaksu("32,01","9,25");
 	  
 	  
 	  //Tiek pabeigts iesniegums UR
@@ -191,7 +180,6 @@ public class TestCases {
 	 //Atķeksē kastītes
 	 webElement("0_Check").click();
 	 webElement("7_Check").click();
-	 //webElement("9_Check").click();
 	 webElement("10_Check").click();
 	 
 	 webElement("talak_Button").click();
@@ -254,15 +242,6 @@ public class TestCases {
 	 webElement("talak_Button").click();
 	 driver.switchTo().alert().accept();//uzlecošs paziņojums
 	 webElement("talak_Button").click();
-	 
-	 //Pāreja uz EUR
-	 /*webElement("akcijuSkaits_Field").sendKeys("2");
-	 webElement("akcijasNominalvertiba_Field").sendKeys("2");
-	 webElement("pamatkapitalaLielums_Field").sendKeys("2");
-	 webElement("apmaksataisPamatkapitals_Field").sendKeys("2");
-	 
-	 webElement("apliecinuEuro_Check").click();
-	 webElement("talak_Button").click();*/
 	 
 	 //Datuma ievade
 	 webElement("datums_Field").sendKeys("31.12.2025.");
@@ -345,11 +324,14 @@ public class TestCases {
   
   //Šī metode salīdzina aktuālo epakalpojuma samaksu ar gaidāmo
   private void salidzinatMaksu(String valstsNodeva, String publikacija) throws Exception{
+	  
+	  
+	  
 	  try{
-		  System.out.println("Gaidāmā valsts nodeva: " + priceProperties.getProperty(valstsNodeva) + " Epakalpojumā redzamā: " +  webElement("valstsNodeva_Field").getText());
-		  Assert.assertEquals(webElement("valstsNodeva_Field").getText(), priceProperties.getProperty(valstsNodeva));
-		  System.out.println("Gaidāmā publikācijas maksa: " + priceProperties.getProperty(publikacija) + " Epakalpojumā redzamā: " +  webElement("publikacija_Field").getText());
-		  Assert.assertEquals(webElement("publikacija_Field").getText(), priceProperties.getProperty(publikacija));
+		  System.out.println("Gaidāmā valsts nodeva: " + valstsNodeva + " Epakalpojumā redzamā: " +  webElement("valstsNodeva_Field").getText());
+		  Assert.assertEquals(webElement("valstsNodeva_Field").getText(), valstsNodeva);
+		  System.out.println("Gaidāmā publikācijas maksa: " + publikacija + " Epakalpojumā redzamā: " +  webElement("publikacija_Field").getText());
+		  Assert.assertEquals(webElement("publikacija_Field").getText(), publikacija);
 		  System.out.println("Samaksa par pakalpojumiem sakrīt ar gaidāmo!");
 	  }catch (Exception e){
 		  System.out.println("Samaksa par pakalpojumiem nesakrīt ar gaidāmo!");

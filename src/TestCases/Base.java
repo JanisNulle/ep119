@@ -91,17 +91,19 @@ public class Base {
   
   //Metode kas ielogojas 
   public static void LogIn() throws Exception{
-	  webElement("banka1").click();
-	  webElement("banka2").sendKeys("sia_dpa_gzalezalitis_test");
-	  webElement("banka3").sendKeys(readFile(workingDir + "\\UserFiles\\user.pass", StandardCharsets.UTF_8));
-	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	  webElement("testAuthentication_Button").click();
+	  webElement("testAuthenticationUser_Field").sendKeys("sia_dpa_gzalezalitis_test");
+	  webElement("testAuthenticationPass_Field").sendKeys(readFile(workingDir + "\\UserFiles\\user.pass", StandardCharsets.UTF_8));
+	  Thread.sleep(2000);
+	  driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	  try{
-		  webElement("banka4").click();	 	
+		  webElement("testAuthenticationLogin_Button").click();	 	
 	  }
 	  catch (Exception e){		 
 	  }	 
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	  select = new Select(webElement("banka5"));
+	  Thread.sleep(2000);
+	  select = new Select(webElement("testAuthenticationPersonList_Combo"));
 	  //select.selectByVisibleText("sia_dpa_gzalezalitis_test Gatis Zāle-Zālītis (31078410838)");
 	  select.selectByIndex(1);
   }

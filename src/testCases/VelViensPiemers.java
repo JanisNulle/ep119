@@ -1,8 +1,8 @@
-package TestCases;
+package testCases;
 
 import org.testng.annotations.Test;
 
-public class VelviensPiemers extends Base{
+public class VelViensPiemers extends Base{
 
 	@Test
 	public void Kodols() throws Exception{

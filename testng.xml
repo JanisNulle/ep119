@@ -4,20 +4,20 @@
 <suite name="Piemera testu kopa" parallel="none">
 
   
-  <test name="EP219 Piemērs">
+  <test name="EP219 Piemers">
     <classes>
      	<class name="testCases.EP219Piemers"/>
     </classes>     
   </test>
   
   
-  <test name="Vēl viens Piemērs">
+  <test name="Vel viens Piemers">
     <classes>
      	<class name="testCases.VelViensPiemers"/>
     </classes>     
   </test>
   
-   <test name="Kārtējais Piemērs">
+   <test name="Kartejais Piemers">
     <classes>
      	<class name="testCases.KartejaisPiemers"/>
     </classes>     

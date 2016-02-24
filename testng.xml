@@ -3,25 +3,28 @@
 
 <suite name="Piemera testu kopa" parallel="none">
 
-  
+  <!--
   <test name="EP219 Piemers">
     <classes>
      	<class name="testCases.EP219Piemers"/>
     </classes>     
   </test>
-  
-  
-  <test name="Vel viens Piemers">
+  -->
+
+  <test name="Test001">
     <classes>
-     	<class name="testCases.VelViensPiemers"/>
+     	<class name="testCases.Test001"/>
     </classes>     
   </test>
-  
-   <test name="Kartejais Piemers">
+
+   
+    
+  <test name="Test002">
     <classes>
-     	<class name="testCases.KartejaisPiemers"/>
+     	<class name="testCases.Test002"/>
     </classes>     
   </test>
+
     
   
 </suite> 

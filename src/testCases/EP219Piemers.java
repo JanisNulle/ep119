@@ -11,23 +11,14 @@ public class EP219Piemers extends Base{
 	public void Kodols() throws Exception{
 		  driver.get("https://lvptest.vraa.gov.lv/lv/Epakalpojumi/EP219?");	  	
 		  LogIn();
-		  //Thread.sleep(10000);
+		  EnterFrame();			  
+		  ClickPiekritu();		  
 		  
-		  driver.switchTo().frame(0);//EP219 web aplikācija ir iekš iframe
-		  driver.switchTo().frame(0);//iekš vēlviena iframe
-			
-
-		  //E-pakalpojumā 219 visi checkboxi .css failā atzīmēti ar izmēru 100x100,
-		  //taču pārlūkā attēlojas parastā izmērā.
-		  //Šī iemesla dēļ Selenium nevar uz tiem uzklikšķināt.
-		  //Jāizmanto JavascriptExecutor klase, kas aktivizē checkboksus "pa taisno".
-		  js.executeScript("arguments[0].click();", webElement("ep219Piekritu_Check"));
-		  
-		  webElement("talak_Button").click();
-		  webElement("jaunsPakalpojums_Button").click();
+		  webElement("jaunsPakalpojums_Button").click();  		  
 		  webElement("ePasts_Field2").sendKeys(readFile(workingDir + "\\UserFiles\\email", StandardCharsets.UTF_8));
-		  select = new Select(webElement("pieteikumaVeids_Combo"));
-		  select.selectByVisibleText("Izmaiņu reģistrācija");
+		  
+		  SelectApplicationTypeID(2);
+		  
 		  webElement("registracijasNumurs_Field").sendKeys("40103291885");
 		  webElement("subjectCheck_Button").click();
 		  
@@ -62,28 +53,8 @@ public class EP219Piemers extends Base{
 		  //Veic salīdzināšanu vai summa sakrīt ar gaidāmo
 		  salidzinatMaksu("32,01","9,25");
 		  
-		  
-		  //Tiek pabeigts iesniegums UR
-		  webElement("pievienotMaksajumaDatus_Button0").click();
-		  webElement("vardsUzvards_Field").sendKeys("Tests Tests");
-		  webElement("personasKodsVaiDzimsanasDatums_Field").sendKeys("111111-11111");
-		  webElement("maksajumaDatums_Field").sendKeys("01.01.2016");
-		  webElement("dokumentaNr_Field").sendKeys("1");
-		  select = new Select(webElement("maksajumuPakalpojumuSniedzejs_Combo"));
-		  select.selectByIndex(1);
-		  webElement("saglabat_Button").click();
-		  
-		  webElement("pievienotMaksajumaDatus_Button1").click();
-		  webElement("vardsUzvards_Field").sendKeys("Tests Tests");
-		  webElement("personasKodsVaiDzimsanasDatums_Field").sendKeys("111111-11111");
-		  webElement("maksajumaDatums_Field").sendKeys("01.01.2016");
-		  webElement("dokumentaNr_Field").sendKeys("1");
-		  select = new Select(webElement("maksajumuPakalpojumuSniedzejs_Combo"));
-		  select.selectByIndex(1);
-		  webElement("saglabat_Button").click();
-		  
-		  webElement("iesniegtUR_Button").click();
-		  webElement("labi_Button").click();	
+		  IesniegtPieteikumuUR();
+	
 	}
 
 }
